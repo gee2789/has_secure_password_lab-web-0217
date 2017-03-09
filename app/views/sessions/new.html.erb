@@ -1,0 +1,10 @@
+<h1> Give us a name and password to login </h1>
+<% if flash[:error] %>
+<%= flash[:error] %>
+<%end%>
+<%= form_for @user, url: sessions_path do |f| %>
+Name: <%= f.text_field :name%><br />
+Password: <%= f.password_field :password%><br />
+Password Confirmation:<%= f.password_field :password_confirmation%>
+<%= f.submit %><br />
+<% end %>
